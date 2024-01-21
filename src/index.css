@@ -3,3 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-dots li button::before {
+	content: "" !important;
+    display: block !important;
+    width: 10px !important;
+    height: 10px !important;
+	background-color: #333 !important;
+	border-radius: 50%;
+}

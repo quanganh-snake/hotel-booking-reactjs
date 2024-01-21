@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { MdOutlineAccessTime, MdArrowRightAlt } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
+import clsx from "clsx";
 
 const Header = () => {
+	const [isVisible, setIsVisible] = useState(false);
+
+	const handleScroll = () => {
+		if (window.scrollY > 100) {
+			setIsVisible(true);
+		} else {
+			setIsVisible(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<header className="bg-sky-800">
+		<header className={clsx("bg-sky-800", isVisible && "fixed top-0 left-0 right-0 z-[10] animate__animated animate__fadeInDown bg-opacity-80 shadow-lg")}>
 			<div className="container mx-auto">
 				<div className="flex justify-between">
 					<div className="header__left flex flex-col lg:flex-row mx-auto lg:mx-0 items-center gap-2 lg:gap-10">
@@ -50,7 +69,7 @@ const Header = () => {
 									<FaChevronDown />
 								</div>
 							</div>
-							<ul tabIndex={0} className="dropdown-content top-full mt-3 z-[1] p-2 shadow min-w-60">
+							<ul tabIndex={0} className="dropdown-content top-full mt-3 z-[1] p-2 bg-white rounded-md shadow min-w-60">
 								<li>
 									<a className="block w-full mb-2 px-3 py-2 rounded-full text-center bg-cyan-500 text-white font-medium cursor-pointer hover:opacity-70">Đăng nhập</a>
 								</li>
@@ -65,10 +84,10 @@ const Header = () => {
 						<div className="header__right--contact">
 							<div className="contact__top flex items-center gap-2">
 								<FaPhone size={26} className="text-cyan-400" />
-								<phone className="text-3xl font-bold text-cyan-400">0334350166</phone>
+								<p className="text-3xl font-bold text-cyan-400">0334350166</p>
 							</div>
-							<div className="contact__bottom dropdown cursor-pointer hover:opacity-70">
-								<div tabIndex={1} role="button" className="contact__bottom--timeline text-white text-sm flex items-center gap-2">
+							<div className="contact__bottom dropdown cursor-pointer">
+								<div tabIndex={1} role="button" className="contact__bottom--timeline hover:opacity-70 text-white text-sm flex items-center gap-2">
 									<p className="flex items-center ">
 										<MdOutlineAccessTime />
 										<span>7h30</span>
@@ -81,7 +100,7 @@ const Header = () => {
 									</p>
 									<FaChevronDown />
 								</div>
-								<ul tabIndex={1} className="dropdown-content mt-2 menu menu-md bg-white shadow-lg w-56 rounded-box">
+								<ul tabIndex={1} className="dropdown-content mt-2 z-[10] menu menu-md bg-white shadow-lg w-56 rounded-box">
 									<li>
 										<a className="font-medium grid grid-cols-2 items-center">
 											<span className="col-span-1">Hồ Chí Minh</span>
