@@ -6,6 +6,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useClickOutside } from "@/services/hooks";
+import { Link } from "react-router-dom";
 
 const BannerHotel = () => {
 	const listSuggestions = [
@@ -120,7 +121,7 @@ const BannerHotel = () => {
 	// effect
 
 	return (
-		<>
+		<Link to={"/khach-san-bangkok/baiyoke-sky-hotel"}>
 			<div className="relative top-0 left-0 w-full flex items-center justify-center bg-no-repeat bg-banner bg-center bg-cover h-[490px]">
 				<div className="absolute container mx-auto top-12">
 					<div className="banner__heading mb-4 text-white">
@@ -262,7 +263,7 @@ const BannerHotel = () => {
 					{/* End: .banner__search-box */}
 				</div>
 			</div>
-		</>
+		</Link>
 	);
 };
 

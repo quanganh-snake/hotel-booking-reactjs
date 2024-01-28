@@ -4,6 +4,7 @@ import { FaPhone } from "react-icons/fa6";
 import { MdOutlineAccessTime, MdArrowRightAlt } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +31,9 @@ const Header = () => {
 				<div className="flex justify-between">
 					<div className="header__left flex flex-col lg:flex-row mx-auto lg:mx-0 items-center gap-2 lg:gap-10">
 						<div className="header__left--logo w-20 lg:w-auto">
-							<img src="/images/logo.svg" alt="Logo brand ivivu" />
+							<Link to={'/'}>
+								<img src="/images/logo.svg" alt="Logo brand ivivu" />
+							</Link>
 						</div>
 						<nav className="header__left--navbar">
 							<ul className="flex gap-6">
