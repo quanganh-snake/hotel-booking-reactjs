@@ -6,6 +6,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useClickOutside } from "@/services/hooks";
+import DateRangePickerDouble from "../DateRangePicker/DateRangePickerDouble";
 
 const BannerHotel = () => {
 	const listSuggestions = [
@@ -160,7 +161,7 @@ const BannerHotel = () => {
 						{/* End: .search-box__field */}
 						<div className="search-box__options grid grid-cols-12 gap-4">
 							<div className="options--times col-span-12 lg:col-span-7 flex items-center justify-between bg-white px-3 py-2 rounded-md">
-								<div className="time__start w-1/2 flex items-center justify-center gap-x-2 p-3 border border-slate-200">
+								{/* <div className="time__start w-1/2 flex items-center justify-center gap-x-2 p-3 border border-slate-200">
 									<IoCalendarOutline />
 									<DatePicker className="focus:outline-none w-3/4" selected={startDate} onChange={(date) => setStartDate(date)} />
 								</div>
@@ -170,7 +171,8 @@ const BannerHotel = () => {
 								<div className="time__end w-1/2 flex items-center justify-center gap-x-2 p-3 border border-slate-200">
 									<IoCalendarOutline />
 									<DatePicker className="focus:outline-none w-3/4" selected={startDate} onChange={(date) => setStartDate(date)} />
-								</div>
+								</div> */}
+								<DateRangePickerDouble />
 							</div>
 							<div ref={bookingRef} className="options--rooms col-span-12 lg:col-span-4 relative bg-white px-3 py-2 rounded-md ">
 								<div

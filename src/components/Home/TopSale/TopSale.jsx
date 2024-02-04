@@ -1,20 +1,17 @@
 import React from "react";
 import { FaFire } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 const TopSale = () => {
 	const settings = {
 		dots: true,
 		infinite: true,
-		speed: 1500,
+		speed: 2000,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 3000,
-		cssEase: "linear",
-		fade: true,
-		fadeSpeed: 1000,
-		useCSS: true,
 	};
 
 	return (
@@ -32,20 +29,30 @@ const TopSale = () => {
 				</div>
 				<div className="slider">
 					<Slider {...settings}>
-						<div className="w-full bg-red-200 rounded-lg">
-							<img src="/images/slider/slider1.png" className="w-full rounded-lg" alt="slide" />
+						<div className="w-full bg-transparent rounded-lg pr-4">
+							<Link to="/khach-san-nha-trang/vinpearl-resort-spa-nha-trang-bay" target="_blank">
+								<img src="/images/slider/slider1.png" className="w-full rounded-lg" alt="slide" />
+							</Link>
 						</div>
-						<div className="w-full bg-red-200 rounded-lg">
-							<img src="/images/slider/slider2.png" className="w-full rounded-lg" alt="slide" />
+						<div className="w-full bg-transparent rounded-lg pr-4">
+							<Link to="/khach-san-quy-nhon/anantara-villas-quy-nhon" target="_blank">
+								<img src="/images/slider/slider2.png" className="w-full rounded-lg" alt="slide" />
+							</Link>
 						</div>
-						<div className="w-full bg-red-200 rounded-lg">
-							<img src="/images/slider/slider3.png" className="w-full rounded-lg" alt="slide" />
+						<div className="w-full bg-transparent rounded-lg pr-4">
+							<Link to="/khach-san-nha-trang/fusion-resort-nha-trang" target="_blank">
+								<img src="/images/slider/slider3.png" className="w-full rounded-lg" alt="slide" />
+							</Link>
 						</div>
-						<div className="w-full bg-red-200 rounded-lg">
-							<img src="/images/slider/slider4.png" className="w-full rounded-lg" alt="slide" />
+						<div className="w-full bg-transparent rounded-lg pr-4">
+							<Link to="/khach-san-ninh-thuan/khu-nghi-duong-amanoi-villas-ninh-thuan" target="_blank">
+								<img src="/images/slider/slider4.png" className="w-full rounded-lg" alt="slide" />
+							</Link>
 						</div>
-						<div className="w-full bg-red-200 rounded-lg">
-							<img src="/images/slider/slider5.png" className="w-full rounded-lg" alt="slide" />
+						<div className="w-full bg-transparent rounded-lg pr-4">
+							<Link to="/khach-san-phu-quoc/sol-by-melia-phu-quoc " target="_blank">
+								<img src="/images/slider/slider5.png" className="w-full rounded-lg" alt="slide" />
+							</Link>
 						</div>
 					</Slider>
 				</div>

@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 const DiscoverPlace = () => {
-    const settings = {
+	const settings = {
 		className: "flex gap-4",
 		slidesToShow: 4,
 		slidesToScroll: 1,
@@ -46,36 +47,44 @@ const DiscoverPlace = () => {
 				<div className="discover__list">
 					<Slider {...settings}>
 						<div className="discover__item">
-							<div className="relative mr-4 bg-[url('/images/discover/dv1.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
-								<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end">
-									<h3 className="text-white text-3xl font-bold uppercase">Quốc tế</h3>
-									<p className="text-white">Khám phá thế giới trong tầm tay - 65 khách sạn</p>
+							<Link to={"/chu-de/combo-quoc-te"}>
+								<div className="relative mr-4 bg-[url('/images/discover/dv1.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
+									<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end hover:shadow-lg cursor-pointer hover:bg-gray-400 hover:bg-opacity-20">
+										<h3 className="text-white text-3xl font-bold uppercase">Quốc tế</h3>
+										<p className="text-white">Khám phá thế giới trong tầm tay - 65 khách sạn</p>
+									</div>
 								</div>
-							</div>
+							</Link>
 						</div>
 						<div className="discover__item">
-							<div className="relative mr-4 bg-[url('/images/discover/dv2.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
-								<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end">
-									<h3 className="text-white text-3xl font-bold uppercase">Villa</h3>
-									<p className="text-white">Chill tại Villa, vui hè thả ga - 30 khách sạn</p>
+							<Link to={"/chu-de/khach-san-villa"}>
+								<div className="relative mr-4 bg-[url('/images/discover/dv2.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
+									<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end hover:shadow-lg cursor-pointer hover:bg-gray-400 hover:bg-opacity-20">
+										<h3 className="text-white text-3xl font-bold uppercase">Villa</h3>
+										<p className="text-white">Chill tại Villa, vui hè thả ga - 30 khách sạn</p>
+									</div>
 								</div>
-							</div>
+							</Link>
 						</div>
 						<div className="discover__item">
-							<div className="relative mr-4 bg-[url('/images/discover/dv3.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
-								<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end">
-									<h3 className="text-white text-3xl font-bold uppercase">Team X</h3>
-									<p className="text-white">Nâng tầm chuyến du lịch của công ty và đội nhóm của bạn!</p>
+							<Link to={"/teamx"}>
+								<div className="relative mr-4 bg-[url('/images/discover/dv3.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
+									<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end hover:shadow-lg cursor-pointer hover:bg-gray-400 hover:bg-opacity-20">
+										<h3 className="text-white text-3xl font-bold uppercase">Team X</h3>
+										<p className="text-white">Nâng tầm chuyến du lịch của công ty và đội nhóm của bạn!</p>
+									</div>
 								</div>
-							</div>
+							</Link>
 						</div>
 						<div className="discover__item">
-							<div className="relative mr-4 lg:mr-0 bg-[url('/images/discover/dv4.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
-								<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end">
-									<h3 className="text-white text-3xl font-bold uppercase">Gift Voucher</h3>
-									<p className="text-white">Lưu giữ khoảnh khắc, trải nghiệm hành trình</p>
+							<Link to={"/voucher-du-lich"}>
+								<div className="relative mr-4 lg:mr-0 bg-[url('/images/discover/dv4.png')] bg-no-repeat bg-cover min-h-[400px] rounded-lg">
+									<div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-lg p-4 flex flex-col justify-end hover:shadow-lg cursor-pointer hover:bg-gray-400 hover:bg-opacity-20">
+										<h3 className="text-white text-3xl font-bold uppercase">Gift Voucher</h3>
+										<p className="text-white">Lưu giữ khoảnh khắc, trải nghiệm hành trình</p>
+									</div>
 								</div>
-							</div>
+							</Link>
 						</div>
 					</Slider>
 				</div>
