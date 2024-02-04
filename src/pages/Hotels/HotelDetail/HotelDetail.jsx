@@ -67,6 +67,47 @@ const HotelDetail = () => {
 									allowfullscreen=""
 								></iframe>
 							</div>
+							<div className="left__hotel--similar my-4">
+								<h3 className="font-bold text-blue-900 mb-4">Khách sạn tương tự</h3>
+								<div className="similar__list flex flex-col gap-y-4">
+									<div className="similar__item flex items-start gap-x-2">
+										<a href="#">
+											<img src="/images/hotels/ht1.png" alt="" className="w-20 h-20 object-cover rounded-lg" />
+										</a>
+										<div className="similar__item--containt">
+											<h4 className="text-md">
+												<a href="#">La Residencia Hotel &amp; Spa Hội An</a>
+											</h4>
+											<div className="flex gap-1 text-sm font-bold">
+												<p className="flex gap-1">
+													<span className="inline-block px-1 bg-green-400 text-white rounded-lg font-bold">9.6</span>
+													<span className="text-green-400">Tuyệt vời</span>
+												</p>
+												<div className="h-5 w-px bg-blue-900"></div>
+												<a href="#">4 nhận xét</a>
+											</div>
+										</div>
+									</div>
+									<div className="similar__item flex items-start gap-x-2">
+										<a href="#">
+											<img src="/images/hotels/ht1.png" alt="" className="w-20 h-20 object-cover rounded-lg" />
+										</a>
+										<div className="similar__item--containt">
+											<h4 className="text-md">
+												<a href="#">La Residencia Hotel &amp; Spa Hội An</a>
+											</h4>
+											<div className="flex gap-1 text-sm font-bold">
+												<p className="flex gap-1">
+													<span className="inline-block px-1 bg-green-400 text-white rounded-lg font-bold">9.6</span>
+													<span className="text-green-400">Tuyệt vời</span>
+												</p>
+												<div className="h-5 w-px bg-blue-900"></div>
+												<a href="#">4 nhận xét</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						{/* End: .hotel-detail__left */}
 					</div>

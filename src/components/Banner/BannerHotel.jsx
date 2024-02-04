@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useClickOutside } from "@/services/hooks";
 import DateRangePickerDouble from "../DateRangePicker/DateRangePickerDouble";
+import { Link } from "react-router-dom";
 
 const BannerHotel = () => {
 	const listSuggestions = [
@@ -121,7 +122,7 @@ const BannerHotel = () => {
 	// effect
 
 	return (
-		<Link to={"/khach-san-bangkok/baiyoke-sky-hotel"}>
+		<>
 			<div className="relative top-0 left-0 w-full flex items-center justify-center bg-no-repeat bg-banner bg-center bg-cover h-[490px]">
 				<div className="absolute container mx-auto top-12">
 					<div className="banner__heading mb-4 text-white">
@@ -160,7 +161,7 @@ const BannerHotel = () => {
 						</div>
 						{/* End: .search-box__field */}
 						<div className="search-box__options grid grid-cols-12 gap-4">
-							<div className="options--times col-span-12 lg:col-span-7 flex items-center justify-between bg-white px-3 py-2 rounded-md">
+							<div className="options--times col-span-12 lg:col-span-7 flex items-center justify-between bg-white px-3 rounded-md">
 								{/* <div className="time__start w-1/2 flex items-center justify-center gap-x-2 p-3 border border-slate-200">
 									<IoCalendarOutline />
 									<DatePicker className="focus:outline-none w-3/4" selected={startDate} onChange={(date) => setStartDate(date)} />
@@ -264,7 +265,7 @@ const BannerHotel = () => {
 					{/* End: .banner__search-box */}
 				</div>
 			</div>
-		</Link>
+		</>
 	);
 };
 

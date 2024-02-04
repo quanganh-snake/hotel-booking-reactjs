@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import transition from "react-element-popper/animations/transition";
 import size from "react-element-popper/animations/size";
 import { IoCalendarOutline } from "react-icons/io5";
+import { MdOutlineNightlight } from "react-icons/md";
 
 const DateRangePickerDouble = () => {
 	const dateRef = useRef();
@@ -12,19 +13,25 @@ const DateRangePickerDouble = () => {
 
 	const [startDate, setStartDate] = useState(dayjs(value?.[0]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
 	const [endDate, setEndDate] = useState(dayjs(value?.[1]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
+	const [countDay, setCountDay] = useState(null);
 
 	const handleClickDate = () => {
 		dateRef.current.openCalendar();
-    };
-    
-    useEffect(() => {
-        setStartDate(dayjs(value?.[0]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
-        setEndDate(dayjs(value?.[1]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
-    }, [value])
+	};
+
+	useEffect(() => {
+		setStartDate(dayjs(value?.[0]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
+		setEndDate(dayjs(value?.[1]?.format(), "DD/MM/YYYY").format("dddd, DD [tháng] MM"));
+
+		let startDay = dayjs(value?.[0]?.format(), "DD/MM/YYYY");
+		let endDay = dayjs(value?.[1]?.format(), "DD/MM/YYYY");
+		const daysDifference = endDay.diff(startDay, "day");
+		setCountDay(daysDifference);
+	}, [value]);
 
 	return (
 		<div className="w-full h-full">
-			<div className="w-full h-full flex items-center justify-around">
+			<div className="relative w-full h-full flex items-center justify-around">
 				<div onClick={handleClickDate} className="flex items-center gap-2 cursor-pointer">
 					<IoCalendarOutline size={24} />
 					<p className="flex flex-col">
@@ -32,7 +39,11 @@ const DateRangePickerDouble = () => {
 						<span className="capitalize">{startDate.split(", ")[0]}</span>
 					</p>
 				</div>
-				<div className="h-full w-px bg-gray-600"></div>
+				<div className="h-full w-px bg-slate-400"></div>
+				<div className="absolute flex flex-row items-center gap-1 bg-white text-gray-500">
+					<span className=" text-sm">{countDay}</span>
+					<MdOutlineNightlight className="-rotate-45" />
+				</div>
 				<div onClick={handleClickDate} className="flex items-center gap-2 cursor-pointer">
 					<IoCalendarOutline size={24} />
 					<p className="flex flex-col">
