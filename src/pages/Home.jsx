@@ -2,7 +2,6 @@ import React from "react";
 import BannerHotel from "@/components/Banner/BannerHotel";
 import TopSale from "@/components/Home/TopSale/TopSale";
 import PlaceDomestic from "@/components/Home/FavoritePlace/PlaceDomestic";
-import Slider from "react-slick";
 import DiscoverPlace from "@/components/Home/DiscoverPlace/DiscoverPlace";
 import PlaceForeign from "@/components/Home/FavoritePlace/PlaceForeign";
 
